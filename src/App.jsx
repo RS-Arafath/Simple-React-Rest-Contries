@@ -1,15 +1,20 @@
-import Contryes from './contryes'
+import Contries from './contries'
 import './App.css'
+import { Suspense } from 'react'
+
+const contriesPromise = fetch('https://openapi.programming-hero.com/api/all')
+.then(res=>res.json())
 
 function App() {
 
 
   return (
     <>
-      <h1>React World On Go</h1>
-      <Contryes></Contryes>
+      <Suspense fallback={<p>loding data...</p>}>
+        <Contries contriesPromise={contriesPromise}></Contries>
+      </Suspense>
     </>
-  )
+  );
 }
 
 export default App
