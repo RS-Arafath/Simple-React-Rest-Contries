@@ -1,4 +1,4 @@
-import Contries from './contries'
+import Countries from './components/Countries/Countries'
 import './App.css'
 import { Suspense } from 'react'
 
@@ -10,8 +10,8 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={<p>loding data...</p>}>
-        <Contries contriesPromise={contriesPromise}></Contries>
+      <Suspense fallback={<p>Loading data...</p>}>
+        <Countries contriesPromise={contriesPromise}></Countries>
       </Suspense>
     </>
   );
