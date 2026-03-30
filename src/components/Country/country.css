@@ -4,15 +4,20 @@
   padding: 20px;
   border-radius: 16px;
 }
+.visited-country{
+  border: 1px solid green;
+  background-color:var(--accent-bg) ;
+  transition: background-color 0.3s;
+}
 .visitedBtn{
-  font-size: 16px;
+  font-size: 20px;
   padding: 5px 10px;
   border-radius: 5px;
   color: var(--accent);
   background: var(--accent-bg);
   border: 2px solid transparent;
   transition: border-color 0.3s;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
   cursor: pointer;
   margin-top: 20px;
 

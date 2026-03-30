@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './country.css';
 
 const Country = ({ country }) => {
   //console.log(Object.values(country.currencies.currencies)[0].name);
+  const [visited, setVisited] = useState(false);
 
   const handleVisited = () => {
-    console.log('button click');
-  }
+    //aibabe o kora jay
+    // setVisited(visited ? false : true)
+      setVisited(!visited); // toggle 
+    };
+  
   return (
-    <div className="country">
+    <div className={`country ${visited ? 'visited-country' : ''}`}>
       <img src={country.flags.flags.png} alt={country.flags.flags.alt} />
       <h1>Name: {country.name.common}</h1>
       <h4>Official Name: {country.name.official}</h4>
@@ -29,8 +33,10 @@ const Country = ({ country }) => {
           (c) => c.symbol + ' ' + c.name,
         )}
       </p>
-       
-      <button onClick={handleVisited} className='visitedBtn'>Not Visited</button>
+
+      <button onClick={handleVisited} className="visitedBtn">
+        {visited ? 'Visited' : 'Not Visited'}
+      </button>
     </div>
   );
 };
