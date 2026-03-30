@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import './country.css';
 
-const Country = ({ country }) => {
+const Country = ({ country, handleVisitedCountries }) => {
+ 
   //console.log(Object.values(country.currencies.currencies)[0].name);
   const [visited, setVisited] = useState(false);
 
   const handleVisited = () => {
     //aibabe o kora jay
     // setVisited(visited ? false : true)
-      setVisited(!visited); // toggle 
-    };
-  
+    setVisited(!visited); // toggle
+    handleVisitedCountries(country);
+  };
+
   return (
     <div className={`country ${visited ? 'visited-country' : ''}`}>
       <img src={country.flags.flags.png} alt={country.flags.flags.alt} />

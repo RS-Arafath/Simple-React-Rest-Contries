@@ -1,17 +1,31 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import Country from '../Country/Country';
-import './contries.css'
+import './contries.css';
+
 
 const Countries = ({ contriesPromise }) => {
+  const [visitedCountries, setVisitedContries] = useState([]);
+
+  const handleVisitedCountries = (country) => {
+    console.log('handle visited country',country);
+    
+  }
   const contriesData = use(contriesPromise);
   const countries = contriesData.countries;
 
   return (
     <div>
-      <h1>total countries: {countries.length}</h1>
-      <div className='countries'>
+      <div className="heading">
+        <h1>Total Countries: {countries.length}</h1>
+        <h2>Total Visited Country:</h2>
+      </div>
+      <div className="countries">
         {countries.map((country) => (
-          <Country key={country.cca3.cca3} country={country}></Country>
+          <Country
+            key={country.cca3.cca3}
+            handleVisitedCountries={handleVisitedCountries}
+            country={country}
+          ></Country>
         ))}
       </div>
     </div>
