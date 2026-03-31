@@ -7,7 +7,10 @@ const Countries = ({ contriesPromise }) => {
   const [visitedCountries, setVisitedContries] = useState([]);
 
   const handleVisitedCountries = (country) => {
-    console.log('handle visited country',country);
+    console.log('handle visited country', country);
+    const newVisitedContries = [...visitedCountries, country];
+    setVisitedContries(newVisitedContries)
+    
     
   }
   const contriesData = use(contriesPromise);
@@ -17,7 +20,7 @@ const Countries = ({ contriesPromise }) => {
     <div>
       <div className="heading">
         <h1>Total Countries: {countries.length}</h1>
-        <h2>Total Visited Country:</h2>
+        <h2>Total Visited Country: {visitedCountries.length}</h2>
       </div>
       <div className="countries">
         {countries.map((country) => (
