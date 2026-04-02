@@ -38,4 +38,6 @@ If you want to run this project locally:
    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
 
    ---
-![Developed By](https://img.shields.io/badge/Developed%20with%20❤️%20by-Arafath-blue)
+<p align="center">
+  Developed with ❤️ by <b>Arafath</b>
+</p>
