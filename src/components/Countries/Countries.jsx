@@ -47,7 +47,7 @@ const Countries = ({ contriesPromise }) => {
       <div className="heading">
         <h1>Total Countries: {countries.length}</h1>
         <h2>Total Visited Country: {visitedCountries.length}</h2>
-        <h2>Total Visited Flags: {visitedFlag.length}</h2>
+        {/* <h2>Total Visited Flags: {visitedFlag.length}</h2> */}
       </div>
       <div className="countries">
         {countries.map((country) => (
